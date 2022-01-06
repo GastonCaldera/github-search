@@ -48,11 +48,12 @@ export default function Dashboard() {
     }
 
     const handleClick = () => {
-        if (!inputValue) {
+        if (!inputValue.trim()) {
             setUser([])
             setFirstTime(true)
             setCount(0)
             setPagination(1)
+            setInputValue('')
         } else {
             fetchData(0)
             setPagination(1)
