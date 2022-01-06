@@ -3,6 +3,7 @@ import { Typography, Grid } from '@mui/material';
 export default function IndividualCell({ xs, value }) {
     return (
         <Grid
+            item
             xs={xs}
             mr={2}
         >

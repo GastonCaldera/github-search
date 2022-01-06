@@ -4,6 +4,7 @@ import { ExpandMore } from '@mui/icons-material';
 import IndividualCell from '../Atoms/IndividualCell'
 import { withStyles } from '@mui/styles';
 import MuiAccordion from '@mui/material/Accordion';
+import { useMediaQuery } from "react-responsive";
 
 const Accordion = withStyles({
     root: {
@@ -19,6 +20,7 @@ const Accordion = withStyles({
   })(MuiAccordion);
 
 export default function BoxUserOrgs({ object }) {
+    const isMobile = useMediaQuery({ maxWidth: 767 });
     return (
         <Accordion>
             <AccordionSummary
@@ -40,7 +42,7 @@ export default function BoxUserOrgs({ object }) {
                             py={1.5}
                             px={2}
                             sx={{
-                                width: "70vw",
+                                width: `${isMobile ? "50vw" : "70vw"}`,
                                 '&:hover': {
                                     background: "#e6e6e6",
                                     borderRadius: `5px 5px 5px 5px`,

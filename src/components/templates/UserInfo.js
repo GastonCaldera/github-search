@@ -40,7 +40,6 @@ export default function UserInfo() {
             try {
                 const result = await axios.get(`https://api.github.com/users/${location?.state?.name}/orgs`)
                 setrOrgs(result.data)
-                console.log(result.data)
             } catch (error) {
                 console.error(error);
             }
@@ -95,10 +94,22 @@ export default function UserInfo() {
                     <>
                         <BoxUserInfo user={user} />
                         {repos.length ? (
-                            <BoxUserRepos object={repos} />
+                            <Grid
+                                container
+                                direction="column"
+                                justifyContent="center"
+                                alignItems="center">
+                                <BoxUserRepos object={repos} />
+                            </Grid>
                         ) : null}
                         {orgs.length ? (
-                            <BoxUserOrgs object={orgs} />
+                            <Grid
+                                container
+                                direction="column"
+                                justifyContent="center"
+                                alignItems="center">
+                                <BoxUserOrgs object={orgs} />
+                            </Grid>
                         ) : null}
                     </>
                 )}
