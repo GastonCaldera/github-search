@@ -28,8 +28,8 @@ export default function BoxUserInfo({ user }) {
                 p={2}
             >
                 <ReadOnlyInput title={'Name'} value={user.name ? user.name : user.login} width={'25ch'} />
-                <ReadOnlyInput title={'Email'} value={user.email} width={'25ch'} />
-                <ReadOnlyInput title={'Followers'} value={user.followers} width={'25ch'} />
+                <ReadOnlyInput title={'Email'} value={user.email ? user.email : "Not found"} width={'25ch'} />
+                <ReadOnlyInput title={'Followers'} value={user.followers ? `${user.followers}` : '0'} width={'25ch'} />
             </Grid>
             <Grid
                 container
@@ -38,8 +38,8 @@ export default function BoxUserInfo({ user }) {
                 alignItems="center"
                 p={2}
             >
-                <ReadOnlyInput title={'Following'} value={user.following} width={'25ch'} />
-                <ReadOnlyInput title={'Repos'} value={user.public_repos} width={'25ch'} />
+                <ReadOnlyInput title={'Following'} value={user.following ? `${user.following}` : '0'} width={'25ch'} />
+                <ReadOnlyInput title={'Repos'} value={user.public_repos ? `${user.public_repos}` : '0'} width={'25ch'} />
             </Grid>
         </>
     );
